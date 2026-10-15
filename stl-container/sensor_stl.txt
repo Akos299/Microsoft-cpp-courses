@@ -1,0 +1,30 @@
+=== Sensor Data Processing System ===
+Demonstrating STL container selection for efficient data processing
+
+=== Sensor Processing System Tests ===
+Adding sensor readings...
+Added sensor 101 (temperature) to Building_A
+Added sensor 102 (humidity) to Building_A
+Added sensor 201 (temperature) to Building_B
+Added sensor 202 (humidity) to Building_B
+Added sensor 301 (temperature) to Building_C
+✓ Sensor data added
+
+Testing ID-based lookup...
+✓ Found sensor 102 in Building_A
+
+Testing location-based queries...
+✓ Found 0 sensors in Building_A
+
+Testing priority alert processing...
+Added alert: Priority 3 - Temperature threshold exceeded
+Added alert: Priority 9 - Critical system failure
+Added alert: Priority 1 - Low battery detected
+Added alert: Priority 7 - Network connectivity issue
+Processing alerts by priority:
+Processing Priority [9]: [Critical system failure] ([CRITICAL])
+Processing Priority [7]: [Network connectivity issue] ([ERROR])
+Processing Priority [3]: [Temperature threshold exceeded] ([WARNING])
+Processing Priority [1]: [Low battery detected] ([INFO])
+
+=== Testing Complete ===

@@ -158,6 +158,8 @@ void benchmarkMiddleOperations() {
         double vectorMiddleInsert = measureTime([&]() {
         for (int i = 0; i < 1000; ++i) {
         auto it = testVector.begin() + testVector.size() / 2;
+        // auto it = testVector.begin();
+        std::advance(it, testList.size() / 2);
         testVector.insert(it, dist(rng));
         }});
 

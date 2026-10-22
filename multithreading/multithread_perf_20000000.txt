@@ -1,0 +1,40 @@
+Single-threaded processing took: 166 ms
+[single] checksum = 3.6132e+07
+Multi-threaded processing (8 threads) took: 30 ms
+[multi ] checksum = 3.6132e+07
+Checksum delta = 3.1963e-06
+Single-threaded processing took: 164 ms
+[single] checksum = 3.61327e+07
+Multi-threaded processing (1 threads) took: 117 ms
+[multi ] checksum = 3.61327e+07
+Checksum delta = 0
+Single-threaded processing took: 167 ms
+[single] checksum = 3.61315e+07
+Multi-threaded processing (2 threads) took: 61 ms
+[multi ] checksum = 3.61315e+07
+Checksum delta = 4.76837e-07
+Single-threaded processing took: 167 ms
+[single] checksum = 3.61354e+07
+Multi-threaded processing (4 threads) took: 31 ms
+[multi ] checksum = 3.61354e+07
+Checksum delta = 2.07126e-06
+Single-threaded processing took: 166 ms
+[single] checksum = 3.61341e+07
+Multi-threaded processing (8 threads) took: 29 ms
+[multi ] checksum = 3.61341e+07
+Checksum delta = 5.1856e-06
+Single-threaded processing took: 170 ms
+[single] checksum = 3.61323e+07
+Multi-threaded processing (16 threads) took: 30 ms
+[multi ] checksum = 3.61323e+07
+Checksum delta = 6.94394e-06
+Single-threaded processing took: 168 ms
+[single] checksum = 3.61332e+07
+Multi-threaded processing (32 threads) took: 26 ms
+[multi ] checksum = 3.61332e+07
+Checksum delta = 5.64754e-06
+Single-threaded processing took: 169 ms
+[single] checksum = 3.61297e+07
+Multi-threaded processing (64 threads) took: 30 ms
+[multi ] checksum = 3.61297e+07
+Checksum delta = 3.04729e-06

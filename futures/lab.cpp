@@ -89,10 +89,11 @@ public:
         // 1. Create numThreads worker threads
         // 2. Each worker should run the workerFunction
         // 3. Store threads in the workers vector
-        
+       
         for (int i = 0; i < numThreads; ++i) {
-            // YOUR CODE - create worker threads
+            workers.emplace_back(&SimpleThreadPool::workerFunction, this);
         }
+         cout << "Thread pool initialized with " << numThreads << " worker threads" << endl;
     }
     
     // TODO 4: Implement worker function that processes tasks from queue
@@ -105,8 +106,24 @@ public:
         
         while (!stopThreadPool.load()) {
             function<void()> task;
-            
-            // YOUR CODE - implement task retrieval and execution
+        {
+            unique_lock<mutex> lock(queueMutex);
+            queueCondition.wait(lock, []{return !taskQueue.empty() || stopThreadPool.load();});
+            // Check if we should stop and queue is empty
+            if (stopThreadPool.load() && taskQueue.empty()) {
+                break;
+            }
+            // Get task from queue
+            if (!taskQueue.empty()) {
+                task = std::move(taskQueue.front());
+                taskQueue.pop();
+            }
+       
+        }
+        // Execute task outside of lock
+            if (task) {
+                task();
+            }
         }
     }
     
@@ -116,8 +133,11 @@ public:
         // 1. Lock the queue mutex
         // 2. Add task to the queue
         // 3. Notify one waiting worker thread
-        
-        // YOUR CODE HERE
+        {
+            lock_guard<mutex> lock(queueMutex);
+            taskQueue.push(std::move(task));
+        }
+        queueCondition.notify_one();
     }
     
     // TODO 6: Shutdown the thread pool
@@ -127,7 +147,24 @@ public:
         // 2. Notify all waiting threads
         // 3. Join all worker threads
         
-        // YOUR CODE HERE
+     
+        // Signal shutdown to all threads
+        stopThreadPool.store(true);
+        
+        // Wake up all waiting threads
+        queueCondition.notify_all();
+        
+        // Wait for all threads to complete
+        for (auto& worker : workers) {
+            if (worker.joinable()) {
+                worker.join();
+            }
+        }
+        
+        workers.clear();
+        cout << "Thread pool shutdown completed" << endl;
+        
+
     }
 };
 
@@ -135,33 +172,27 @@ public:
 // PART 3: Atomic Operations and Lock-Free Programming
 // ============================================================================
 
-// TODO 7: Implement lock-free increment function
-void atomicIncrement(int iterations) {
-    // YOUR CODE HERE
-    // Increment globalCounter atomically 'iterations' times
-    // Use fetch_add() or the ++ operator on atomic variables
-    
+// Implement lock-free increment function
+void atomicIncrement(int iterations) { 
     for (int i = 0; i < iterations; ++i) {
         // YOUR CODE - atomic increment
+        globalCounter.fetch_add(1);
     }
 }
 
-// TODO 8: Implement compare-and-swap operation
+// Implement compare-and-swap operation
 bool atomicCompareAndSwap(atomic<int>& target, int expected, int desired) {
-    // YOUR CODE HERE
-    // Use compare_exchange_strong to atomically compare and swap
-    // Return true if swap was successful
-    
-    return false;  // Replace with actual implementation
+    return target.compare_exchange_strong(expected,desired);
 }
 
 // ============================================================================
 // PART 4: Combining Patterns - Async Task Processing
 // ============================================================================
 
-// TODO 9: Process multiple tasks asynchronously and collect results
+// Process multiple tasks asynchronously and collect results
 vector<future<int>> processTasksBatch(SimpleThreadPool& pool, const vector<int>& inputData) {
     vector<future<int>> futures;
+     futures.reserve(inputData.size());
     
     // YOUR CODE HERE
     // 1. For each input value, create a promise/future pair
@@ -171,6 +202,21 @@ vector<future<int>> processTasksBatch(SimpleThreadPool& pool, const vector<int>&
     
     for (int value : inputData) {
         // YOUR CODE - create promise/future and submit task
+        auto promise_ = std::make_shared<promise<int>>();
+        future<int> future_ = promise_->get_future();
+
+        pool.enqueue([promise_, value](){
+            // Simulate some processing
+            this_thread::sleep_for(chrono::milliseconds(50));
+            
+            // Calculate result (square the input)
+            int result = value * value;
+            
+            // Set the promise value
+            promise_->set_value(result);
+        });
+        futures.push_back(std::move(future_));
+     
     }
     
     return futures;
@@ -184,7 +230,7 @@ void testFuturesAndPromises() {
     promise<int> calcPromise;
     future<int> calcFuture = calcPromise.get_future();
     
-    thread calcThread(asyncCalculation, move(calcPromise), 10);
+    thread calcThread(asyncCalculation, std::move(calcPromise), 10);
     
     cout << "Waiting for async calculation..." << endl;
     int result = calcFuture.get();
@@ -196,7 +242,7 @@ void testFuturesAndPromises() {
     promise<string> riskPromise;
     future<string> riskFuture = riskPromise.get_future();
     
-    thread riskThread(riskyAsyncTask, move(riskPromise), 25);
+    thread riskThread(riskyAsyncTask, std::move(riskPromise), 25);
     
     try {
         string riskResult = riskFuture.get();

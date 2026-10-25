@@ -1,0 +1,67 @@
+=== Basic Code Optimization Lab ===
+Learning memory optimization, algorithm analysis, and compiler optimization
+
+=== Memory Optimization Tests ===
+Testing: Array of Structures...
+  Average time: 0.000 ms
+Testing: Structure of Arrays...
+  Average time: 0.000 ms
+  SoA vs AoS:
+    Speedup: nanx
+    Improvement: nan%
+
+Testing memory pool allocation...
+Testing: Memory Pool...
+  Average time: 0.012 ms
+Testing: Heap Allocation...
+  Average time: 0.011 ms
+  Memory Pool vs Heap:
+    Speedup: 0.87x
+    Improvement: -14.8%
+
+=== Algorithm Optimization Tests ===
+Testing: Linear Search...
+  Average time: 0.000 ms
+Testing: Binary Search...
+  Average time: 0.000 ms
+Testing: Hash Search...
+  Average time: 0.000 ms
+  Binary vs Linear:
+    Speedup: nanx
+    Improvement: nan%
+  Hash vs Linear:
+    Speedup: nanx
+    Improvement: nan%
+Testing: Bubble Sort...
+  Average time: 0.760 ms
+Testing: STL Sort...
+  Average time: 0.023 ms
+  STL vs Bubble:
+    Speedup: 32.48x
+    Improvement: 96.9%
+
+=== Loop Optimization Tests ===
+Testing: Basic Matrix Multiply...
+  Average time: 12.566 ms
+Testing: Optimized Matrix Multiply...
+  Average time: 1.652 ms
+  Loop Interchange:
+    Speedup: 7.61x
+    Improvement: 86.9%
+Testing: Basic Dot Product...
+  Average time: 0.000 ms
+Testing: Unrolled Dot Product...
+  Average time: 0.003 ms
+  Loop Unrolling:
+    Speedup: 0.00x
+    Improvement: -inf%
+
+=== Compiler Optimization Reminder ===
+Remember to test with different compiler flags:
+  -O0 (no optimization)
+  -O2 (standard optimization)
+  -O3 (maximum optimization)
+  -march=native (optimize for your CPU)
+
+=== Lab Complete! ===
+You've successfully implemented basic optimization techniques!

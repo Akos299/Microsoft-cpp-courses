@@ -1,0 +1,19 @@
+./mat_layout 1000 50000 10 50 > out_1  
+
+Matrix size: 1000 x 1000
+Vector length: 50000
+
+=== Matrix multiplication ===
+Basic (i-j-k):     5671.075221 ms
+Optimized (i-k-j): 3699.880454 ms
+Speedup: 1.532773x
+Numerical check: PASS
+
+=== Dot product ===
+Basic:       0.178153 ms
+Unrolled x4: 0.111682 ms
+Speedup: 1.595189x
+Basic result:    27.147956
+Unrolled result: 27.147956
+Absolute error:  0.000000
+Numerical check: PASS

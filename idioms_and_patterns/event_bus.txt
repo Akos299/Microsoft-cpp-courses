@@ -1,0 +1,6 @@
+USER_LOGIN subscribers: 3
+SYSTEM_ERROR subscribers: 1
+Subscriber 1: User activity: Alice logged in
+Subscriber 2: Login detected at 1793034412
+[LOG] USER_LOGIN: Alice logged in
+[ALERT] *** SYSTEM_ERROR: Database unavailable ***

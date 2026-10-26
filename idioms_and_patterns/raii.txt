@@ -1,0 +1,22 @@
+
+--- Test 1: Success ---
+Database connected: localhost:5432/mydb
+Connected? true
+Executing: SELECT * FROM users
+Database disconnected: localhost:5432/mydb
+
+--- Test 2: Query failure ---
+Database connected: localhost:5432/mydb
+Executing: ERROR
+Database disconnected: localhost:5432/mydb
+
+--- Test 3: Exception during operation ---
+Database connected: localhost:5432/mydb
+Database disconnected: localhost:5432/mydb
+
+--- Test 4: Move ownership ---
+Database connected: localhost:5432/anotherdb
+First connected? false
+Second connected? true
+Executing: SELECT 1
+Database disconnected: localhost:5432/anotherdb

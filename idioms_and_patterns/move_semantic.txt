@@ -1,0 +1,11 @@
+Before move: size = 1000000, capacity = 1000000
+After move: source size = 0, destination size = 1000000
+Reused source: 42
+After move assignment: size = 1000000
+Expected error: DataBuffer capacity exceeded
+First processed value: 0
+
+Benchmark (1000000 elements, 100 iterations)
+Move transfers: 2 us
+Deep copies:    580380 us
+Copy/move time ratio: 290190x

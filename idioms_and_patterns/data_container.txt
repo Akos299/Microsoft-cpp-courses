@@ -1,0 +1,18 @@
+
+=== Test 1: Forward an lvalue ===
+TestObject constructed from lvalue: Hello
+
+=== Test 2: Forward an rvalue ===
+TestObject constructed from rvalue: World
+
+=== Test 3: In-place construction ===
+TestObject constructed with two args: Modern-C++
+
+=== Test 4: Display all objects ===
+Value: Hello
+Value: World
+Value: Modern-C++
+
+=== Test 5: Container information ===
+Size: 3
+Empty: false

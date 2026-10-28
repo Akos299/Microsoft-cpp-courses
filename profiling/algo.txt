@@ -1,0 +1,214 @@
+
+================================
+Dataset size: 1000
+================================
+
+=== std::sort ===
+Trials:                 5
+Mean:                   18.4000 us
+Minimum:                15.0000 us
+Maximum:                25.0000 us
+Sample std. deviation:  3.9749 us
+Standard error:         1.7776 us
+95% CI for mean:        [13.4653, 23.3347] us
+Coefficient of variation: 21.6028%
+
+=== Bubble sort ===
+Trials:                 5
+Mean:                   4641.0000 us
+Minimum:                3954.0000 us
+Maximum:                5532.0000 us
+Sample std. deviation:  598.6410 us
+Standard error:         267.7204 us
+95% CI for mean:        [3897.8082, 5384.1918] us
+Coefficient of variation: 12.8990%
+
+=== Linear search (100 queries) ===
+Trials:                 20
+Mean:                   325.9500 us
+Minimum:                312.0000 us
+Maximum:                341.0000 us
+Sample std. deviation:  11.1755 us
+Standard error:         2.4989 us
+95% CI for mean:        [320.7198, 331.1802] us
+Coefficient of variation: 3.4286%
+
+=== Binary search (100 queries) ===
+Trials:                 20
+Mean:                   4.8500 us
+Minimum:                4.0000 us
+Maximum:                5.0000 us
+Sample std. deviation:  0.3663 us
+Standard error:         0.0819 us
+95% CI for mean:        [4.6785, 5.0215] us
+Coefficient of variation: 7.5536%
+
+=== Hash lookup (100 queries) ===
+Trials:                 20
+Mean:                   4.0500 us
+Minimum:                4.0000 us
+Maximum:                5.0000 us
+Sample std. deviation:  0.2236 us
+Standard error:         0.0500 us
+95% CI for mean:        [3.9453, 4.1547] us
+Coefficient of variation: 5.5212%
+
+=== Sequential memory access ===
+Trials:                 20
+Mean:                   2.0000 us
+Minimum:                2.0000 us
+Maximum:                2.0000 us
+Sample std. deviation:  0.0000 us
+Standard error:         0.0000 us
+95% CI for mean:        [2.0000, 2.0000] us
+Coefficient of variation: 0.0000%
+
+=== Randomized memory access ===
+Trials:                 20
+Mean:                   107.8500 us
+Minimum:                105.0000 us
+Maximum:                112.0000 us
+Sample std. deviation:  2.0072 us
+Standard error:         0.4488 us
+95% CI for mean:        [106.9106, 108.7894] us
+Coefficient of variation: 1.8611%
+
+================================
+Dataset size: 10000
+================================
+
+=== std::sort ===
+Trials:                 5
+Mean:                   179.4000 us
+Minimum:                172.0000 us
+Maximum:                190.0000 us
+Sample std. deviation:  7.2664 us
+Standard error:         3.2496 us
+95% CI for mean:        [170.3791, 188.4209] us
+Coefficient of variation: 4.0504%
+
+=== Bubble sort ===
+Trials:                 5
+Mean:                   309262.2000 us
+Minimum:                307606.0000 us
+Maximum:                310217.0000 us
+Sample std. deviation:  987.3362 us
+Standard error:         441.5502 us
+95% CI for mean:        [308036.4568, 310487.9432] us
+Coefficient of variation: 0.3193%
+
+=== Linear search (100 queries) ===
+Trials:                 20
+Mean:                   2339.8500 us
+Minimum:                2284.0000 us
+Maximum:                2439.0000 us
+Sample std. deviation:  53.3827 us
+Standard error:         11.9367 us
+95% CI for mean:        [2314.8664, 2364.8336] us
+Coefficient of variation: 2.2815%
+
+=== Binary search (100 queries) ===
+Trials:                 20
+Mean:                   7.0000 us
+Minimum:                7.0000 us
+Maximum:                7.0000 us
+Sample std. deviation:  0.0000 us
+Standard error:         0.0000 us
+95% CI for mean:        [7.0000, 7.0000] us
+Coefficient of variation: 0.0000%
+
+=== Hash lookup (100 queries) ===
+Trials:                 20
+Mean:                   3.2000 us
+Minimum:                3.0000 us
+Maximum:                4.0000 us
+Sample std. deviation:  0.4104 us
+Standard error:         0.0918 us
+95% CI for mean:        [3.0079, 3.3921] us
+Coefficient of variation: 12.8247%
+
+=== Sequential memory access ===
+Trials:                 20
+Mean:                   20.0000 us
+Minimum:                20.0000 us
+Maximum:                20.0000 us
+Sample std. deviation:  0.0000 us
+Standard error:         0.0000 us
+95% CI for mean:        [20.0000, 20.0000] us
+Coefficient of variation: 0.0000%
+
+=== Randomized memory access ===
+Trials:                 20
+Mean:                   822.2500 us
+Minimum:                797.0000 us
+Maximum:                932.0000 us
+Sample std. deviation:  32.5219 us
+Standard error:         7.2721 us
+95% CI for mean:        [807.0295, 837.4705] us
+Coefficient of variation: 3.9552%
+
+================================
+Dataset size: 100000
+================================
+
+=== std::sort ===
+Trials:                 5
+Mean:                   1697.0000 us
+Minimum:                1662.0000 us
+Maximum:                1765.0000 us
+Sample std. deviation:  39.9061 us
+Standard error:         17.8466 us
+95% CI for mean:        [1647.4579, 1746.5421] us
+Coefficient of variation: 2.3516%
+
+Bubble sort skipped for 100K elements.
+
+=== Linear search (100 queries) ===
+Trials:                 20
+Mean:                   23556.3500 us
+Minimum:                23305.0000 us
+Maximum:                23769.0000 us
+Sample std. deviation:  147.4257 us
+Standard error:         32.9654 us
+95% CI for mean:        [23487.3534, 23625.3466] us
+Coefficient of variation: 0.6258%
+
+=== Binary search (100 queries) ===
+Trials:                 20
+Mean:                   8.0000 us
+Minimum:                8.0000 us
+Maximum:                8.0000 us
+Sample std. deviation:  0.0000 us
+Standard error:         0.0000 us
+95% CI for mean:        [8.0000, 8.0000] us
+Coefficient of variation: 0.0000%
+
+=== Hash lookup (100 queries) ===
+Trials:                 20
+Mean:                   2.0000 us
+Minimum:                2.0000 us
+Maximum:                2.0000 us
+Sample std. deviation:  0.0000 us
+Standard error:         0.0000 us
+95% CI for mean:        [2.0000, 2.0000] us
+Coefficient of variation: 0.0000%
+
+=== Sequential memory access ===
+Trials:                 20
+Mean:                   213.9000 us
+Minimum:                213.0000 us
+Maximum:                217.0000 us
+Sample std. deviation:  1.4473 us
+Standard error:         0.3236 us
+95% CI for mean:        [213.2226, 214.5774] us
+Coefficient of variation: 0.6766%
+
+=== Randomized memory access ===
+Trials:                 20
+Mean:                   8256.3000 us
+Minimum:                8149.0000 us
+Maximum:                8412.0000 us
+Sample std. deviation:  71.5226 us
+Standard error:         15.9929 us
+95% CI for mean:        [8222.8268, 8289.7732] us
+Coefficient of variation: 0.8663%

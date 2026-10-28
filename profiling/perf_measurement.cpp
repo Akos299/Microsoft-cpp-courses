@@ -97,6 +97,35 @@ public:
             measurements.push_back(elapseTime);
         }
     }
+
+    template<typename Func, typename Setup>
+    void runBenchmark(Func function, Setup setup, int trials = 10) {
+        if (trials < 2) {
+            throw std::invalid_argument(
+                "At least 2 trials are required."
+            );
+        }
+
+        measurements.clear();
+        measurements.reserve(static_cast<std::size_t>(trials));
+
+        // Warm-up: setup and execution are excluded from measurements.
+        setup();
+        function();
+
+        for (int i = 0; i < trials; ++i) {
+            setup(); // Prepare data before timing.
+
+            PrecisionTimer timerObject;
+            timerObject.startTiming();
+
+            function();
+
+            measurements.push_back(
+                timerObject.getElapsedMicroseconds()
+            );
+        }
+    }
     
     void printStatistics() {
         // TODO: Calculate and display statistical analysis

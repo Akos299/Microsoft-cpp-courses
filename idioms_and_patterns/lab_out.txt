@@ -1,0 +1,60 @@
+=== Modern C++ Idioms and Patterns Lab ===
+Learning RAII principles, move semantics, and modern design patterns
+
+=== Testing RAII ===
+File opened: test_output.txt
+✓ File operations completed successfully
+File automatically closed: test_output.txt
+Buffer allocated: 100 elements
+✓ Smart buffer created and used, size: 100
+✓ All resources automatically cleaned up via RAII
+
+=== Testing Move Semantics ===
+Buffer allocated: 50 elements
+Buffer1 size before move: 50
+Buffer1[0] = 42, Buffer1[49] = 99
+After move:
+Buffer2 size: 50
+Buffer2[0] = 42, Buffer2[49] = 99
+✓ Move semantics working correctly
+
+=== Testing Modern Design Patterns ===
+Publishing event: System Started
+Observer 1 received: System Started
+Observer 2 logged: System Started
+Publishing event: User Logged In
+Observer 1 received: User Logged In
+Observer 2 logged: User Logged In
+Drawing Circle with radius 5
+Circle area: 78.5397
+Drawing Rectangle 4x6
+Rectangle area: 24
+✓ Factory pattern working correctly
+
+=== Testing Modern C++ Features ===
+Container contents:
+- Apple
+- Banana
+- Cherry
+- Date
+- Elderberry
+
+Processing data with lambda:
+Processing: Apple
+Processing: Banana
+Processing: Cherry
+Processing: Date
+Processing: Elderberry
+✓ Found item: Banana
+Items with more than 5 characters:
+- Banana
+- Cherry
+- Elderberry
+✓ Modern features working correctly
+
+=== Testing Move Semantics ===
+Buffer allocated: 1000000 elements
+Move operation time: 0 ms
+
+=== Lab Complete! ===
+You've successfully implemented modern C++ idioms and patterns!

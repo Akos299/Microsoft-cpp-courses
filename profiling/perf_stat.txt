@@ -1,0 +1,20 @@
+
+=== Arithmetic workload ===
+Trials:                 100
+Mean:                   20.0300 us
+Minimum:                20.0000 us
+Maximum:                21.0000 us
+Sample std. deviation:  0.1714 us
+Standard error:         0.0171 us
+95% CI for mean:        [19.9964, 20.0636] us
+Coefficient of variation: 0.8559%
+
+=== Vector workload ===
+Trials:                 100
+Mean:                   154.4900 us
+Minimum:                136.0000 us
+Maximum:                187.0000 us
+Sample std. deviation:  15.6783 us
+Standard error:         1.5678 us
+95% CI for mean:        [151.4171, 157.5629] us
+Coefficient of variation: 10.1484%

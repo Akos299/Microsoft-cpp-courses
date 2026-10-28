@@ -1,0 +1,215 @@
+
+========================================
+Elements: 1000
+========================================
+
+=== Write: flush after every integer ===
+Trials:                 5
+Mean:                   3286.6000 us
+Minimum:                2758.0000 us
+Maximum:                4220.0000 us
+Sample std. deviation:  582.8544 us
+Standard error:         260.6604 us
+95% CI for mean:        [2563.0066, 4010.1934] us
+Coefficient of variation: 17.7343%
+
+=== Write: buffered text ===
+Trials:                 5
+Mean:                   202.4000 us
+Minimum:                172.0000 us
+Maximum:                286.0000 us
+Sample std. deviation:  47.5426 us
+Standard error:         21.2617 us
+95% CI for mean:        [143.3775, 261.4225] us
+Coefficient of variation: 23.4894%
+
+=== Write: bulk binary ===
+Trials:                 5
+Mean:                   174.6000 us
+Minimum:                40.0000 us
+Maximum:                434.0000 us
+Sample std. deviation:  159.2633 us
+Standard error:         71.2247 us
+95% CI for mean:        [-23.1198, 372.3198] us
+Coefficient of variation: 91.2161%
+
+File sizes:
+Flush text:    7390 bytes
+Buffered text: 7390 bytes
+Bulk binary:   4000 bytes
+
+=== Read: stream integer extraction ===
+Trials:                 10
+Mean:                   204.3000 us
+Minimum:                162.0000 us
+Maximum:                299.0000 us
+Sample std. deviation:  59.1308 us
+Standard error:         18.6988 us
+95% CI for mean:        [162.0033, 246.5967] us
+Coefficient of variation: 28.9431%
+
+=== Read: load text then parse ===
+Trials:                 10
+Mean:                   752.5000 us
+Minimum:                744.0000 us
+Maximum:                773.0000 us
+Sample std. deviation:  8.1001 us
+Standard error:         2.5615 us
+95% CI for mean:        [746.7060, 758.2940] us
+Coefficient of variation: 1.0764%
+
+=== Read: bulk binary ===
+Trials:                 10
+Mean:                   32.9000 us
+Minimum:                32.0000 us
+Maximum:                33.0000 us
+Sample std. deviation:  0.3162 us
+Standard error:         0.1000 us
+95% CI for mean:        [32.6738, 33.1262] us
+Coefficient of variation: 0.9612%
+
+Validation: passed
+
+========================================
+Elements: 10000
+========================================
+
+=== Write: flush after every integer ===
+Trials:                 5
+Mean:                   14991.8000 us
+Minimum:                13909.0000 us
+Maximum:                17442.0000 us
+Sample std. deviation:  1485.4995 us
+Standard error:         664.3356 us
+95% CI for mean:        [13147.6045, 16835.9955] us
+Coefficient of variation: 9.9087%
+
+=== Write: buffered text ===
+Trials:                 5
+Mean:                   748.0000 us
+Minimum:                735.0000 us
+Maximum:                764.0000 us
+Sample std. deviation:  13.8384 us
+Standard error:         6.1887 us
+95% CI for mean:        [730.8202, 765.1798] us
+Coefficient of variation: 1.8500%
+
+=== Write: bulk binary ===
+Trials:                 5
+Mean:                   93.4000 us
+Minimum:                83.0000 us
+Maximum:                114.0000 us
+Sample std. deviation:  12.3410 us
+Standard error:         5.5191 us
+95% CI for mean:        [78.0791, 108.7209] us
+Coefficient of variation: 13.2130%
+
+File sizes:
+Flush text:    73943 bytes
+Buffered text: 73943 bytes
+Bulk binary:   40000 bytes
+
+=== Read: stream integer extraction ===
+Trials:                 10
+Mean:                   1286.0000 us
+Minimum:                1272.0000 us
+Maximum:                1337.0000 us
+Sample std. deviation:  19.8886 us
+Standard error:         6.2893 us
+95% CI for mean:        [1271.7736, 1300.2264] us
+Coefficient of variation: 1.5465%
+
+=== Read: load text then parse ===
+Trials:                 10
+Mean:                   4082.8000 us
+Minimum:                4070.0000 us
+Maximum:                4096.0000 us
+Sample std. deviation:  9.9309 us
+Standard error:         3.1404 us
+95% CI for mean:        [4075.6964, 4089.9036] us
+Coefficient of variation: 0.2432%
+
+=== Read: bulk binary ===
+Trials:                 10
+Mean:                   85.6000 us
+Minimum:                83.0000 us
+Maximum:                91.0000 us
+Sample std. deviation:  2.7162 us
+Standard error:         0.8589 us
+95% CI for mean:        [83.6571, 87.5429] us
+Coefficient of variation: 3.1731%
+
+Validation: passed
+
+========================================
+Elements: 100000
+========================================
+
+=== Write: flush after every integer ===
+Trials:                 5
+Mean:                   141190.8000 us
+Minimum:                139430.0000 us
+Maximum:                144504.0000 us
+Sample std. deviation:  1938.3033 us
+Standard error:         866.8356 us
+95% CI for mean:        [138784.4644, 143597.1356] us
+Coefficient of variation: 1.3728%
+
+=== Write: buffered text ===
+Trials:                 5
+Mean:                   6998.4000 us
+Minimum:                6938.0000 us
+Maximum:                7098.0000 us
+Sample std. deviation:  59.9066 us
+Standard error:         26.7910 us
+95% CI for mean:        [6924.0281, 7072.7719] us
+Coefficient of variation: 0.8560%
+
+=== Write: bulk binary ===
+Trials:                 5
+Mean:                   504.0000 us
+Minimum:                485.0000 us
+Maximum:                543.0000 us
+Sample std. deviation:  23.0434 us
+Standard error:         10.3053 us
+95% CI for mean:        [475.3924, 532.6076] us
+Coefficient of variation: 4.5721%
+
+File sizes:
+Flush text:    739056 bytes
+Buffered text: 739056 bytes
+Bulk binary:   400000 bytes
+
+=== Read: stream integer extraction ===
+Trials:                 10
+Mean:                   12808.1000 us
+Minimum:                12626.0000 us
+Maximum:                12968.0000 us
+Sample std. deviation:  101.7442 us
+Standard error:         32.1743 us
+95% CI for mean:        [12735.3217, 12880.8783] us
+Coefficient of variation: 0.7944%
+
+=== Read: load text then parse ===
+Trials:                 10
+Mean:                   41762.8000 us
+Minimum:                41105.0000 us
+Maximum:                42646.0000 us
+Sample std. deviation:  401.3801 us
+Standard error:         126.9275 us
+95% CI for mean:        [41475.6899, 42049.9101] us
+Coefficient of variation: 0.9611%
+
+=== Read: bulk binary ===
+Trials:                 10
+Mean:                   757.1000 us
+Minimum:                728.0000 us
+Maximum:                800.0000 us
+Sample std. deviation:  20.4257 us
+Standard error:         6.4592 us
+95% CI for mean:        [742.4893, 771.7107] us
+Coefficient of variation: 2.6979%
+
+Validation: passed
+
+Checksum: 890434

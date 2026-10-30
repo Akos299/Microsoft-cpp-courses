@@ -219,7 +219,7 @@ public:
     
     // Hash-based search using unordered_map - O(1) average
     static void buildHashMap(const vector<int>& data, unordered_map<int, int>& hashMap) {
-         hashMap.clear();
+        hashMap.clear();
         hashMap.reserve(data.size());
 
         for (std::size_t i = 0; i < data.size(); ++i) {
